@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect } from "react";
+import { Route } from "react-router-dom";
+import Home from "./Home";
+import { Switch, useRouteMatch, withRouter } from "react-router";
+import { Header } from "./Header";
+import { useDispatch } from "react-redux";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+// class App extends Component {
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// z: https://www.section.io/engineering-education/how-to-setup-nodejs-express-for-react/
+	// function App() {
+
+	// const dispatch = useDispatch();
+
+	// useEffect(() => {
+	// 	dispatch(/*tu coś*/);
+	// }, [dispatch]);
+
+	return (
+		<>
+			<Main />
+		</>
+	);
 }
 
-export default App;
+function Main() {
+	const { path } = useRouteMatch();
+
+	return (
+		<>
+			<Header />
+			<Switch>
+				<Route path={path} exact component={Home} />	
+			</Switch>
+		</>
+	);
+}
+
+export default withRouter(App);
