@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // https://stackoverflow.com/questions/39999367/how-do-i-reference-a-local-image-in-react
 // Myk z import działa.
-const nazwa_strony = "HYR";
+const nazwa_strony = "Projekt zaliczeniowy - Biometria 20/21";
 
 export function Header() {
 	const __selector = useSelector((state) => state.authReducer);
@@ -49,18 +49,6 @@ export function Header() {
 					</Container>
 				</Navbar.Brand>
 
-				<Nav fill variant="tabs" defaultActiveKey="/home">
-					<Nav.Link as={Link} to="/booking">
-						Rezerwacja samochodu
-					</Nav.Link>
-					<Nav.Link
-						as={Link}
-						to="/user"
-						className="justify-content-end"
-					>
-						Panel Użytkownika
-					</Nav.Link>
-				</Nav>
 				{user ? (
 					<>
 						<Avatar
