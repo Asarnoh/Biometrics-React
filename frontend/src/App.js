@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import Home from "./Home";
+import Register from "./Register";
+
 import { Switch, useRouteMatch, withRouter } from "react-router";
 import { Header } from "./Header";
 import { useDispatch } from "react-redux";
@@ -31,7 +33,8 @@ function Main() {
 		<>
 			<Header />
 			<Switch>
-				<Route path={path} exact component={Home} />	
+				<Route path={path} exact component={Home} />
+				<Route path={path + "register"} component={Register} />
 			</Switch>
 		</>
 	);
