@@ -179,10 +179,10 @@ const drawPath = (canvas, points, closePath) => {
 		region.lineTo(point[0], point[1]);
 	}
 
-	if (closePath) {
+	if (closePath){
 		region.closePath();
 	}
-	canvas.strokeStyle = "grey";
+	canvas.strokeStyle ="grey";
 	canvas.stroke(region);
 };
 
