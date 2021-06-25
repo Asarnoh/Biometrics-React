@@ -23,6 +23,7 @@ const videoCenterCSS = {
 	width: 640,
 	height: 480,
 };
+
 const canvasCenterCSS = {
 	justifyContent: "center",
 	position: "absolute",
