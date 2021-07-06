@@ -7,6 +7,9 @@ import { drawMesh } from "./utilities";
 import * as fs from "fs";
 import { saveAs } from "file-saver";
 import { findBackend } from "@tensorflow/tfjs";
+//import '@tensorflow/tfjs-node'; nie działa, prawdopodobnie coś z Pythonem. I tak wymaga Maca z Intelem
+import * as canvas from "canvas";
+import * as faceapi from "face-api.js";
 
 const divCSS = { justifyContent: "center", alignItems: "center" };
 
@@ -21,6 +24,7 @@ const videoCenterCSS = {
 	transform: "scaleX(-1)",
 	textAlign: "center",
 	width: 640,
+
 	height: 480,
 };
 
@@ -85,6 +89,7 @@ function HomeBody() {
 			const canvas_text = canvasRef.current.getContext("2d");
 			drawMesh(face, canvas_text);
 			console.log(face);
+			console.log(faceapi.nets);
 
 			if (isWrittenOceFlag) {
 				isWrittenOceFlag = false;
